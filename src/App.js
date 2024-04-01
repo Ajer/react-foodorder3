@@ -2,6 +2,9 @@ import {useState} from 'react'
 import Header from './components/Layout/Header';
 import Meals from './components/Meals/Meals';
 import CartProvider from './store/CartProvider';
+import Cart from './components/Cart/Cart';
+
+
 
 function App() {
 
@@ -19,8 +22,8 @@ function App() {
   }
 
   return (
-    <CartProvider>    {/*innehåller CartReducer*/}
-      {cartIsShown &&  <div>Cart....</div>} {/*<div>Cart...</div>*/}
+    <CartProvider>
+      {cartIsShown && <Cart/>}
       <Header onShowCart={showCartHandler} />
       <main>
         <Meals />
